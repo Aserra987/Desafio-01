@@ -1,4 +1,4 @@
-import { loginElements } from "../e2e/online-shop/pages/login"
+import { loginPage } from "../e2e/online-shop/pages/login";
 
 Cypress.Commands.add('getElement', ({dataCy, selector}) => { 
     if(dataCy) {
@@ -10,7 +10,7 @@ Cypress.Commands.add('getElement', ({dataCy, selector}) => {
 });
 
 Cypress.Commands.add('login', (username, password) => { 
-    cy.getElement({dataCy: loginElements.dataCys.usernameTexBox}).type(username);
-    cy.getElement({dataCy: loginElements.dataCys.passwordTexBox}).type(password);
-    cy.getElement({dataCy: loginElements.dataCys.submitFormButton}).click();
+    cy.getElement({dataCy: loginPage.dataCys.usernameTexBox}).type(username);
+    cy.getElement({dataCy: loginPage.dataCys.passwordTexBox}).type(password);
+    cy.getElement({dataCy: loginPage.dataCys.submitFormButton}).click();
 });
